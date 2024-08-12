@@ -176,23 +176,7 @@ ax4.hist(new_bins[:-1],new_bins, weights=new_counts,color='w',histtype='bar',alp
 bin_centers = new_bins[:-1] + np.diff(new_bins) / 2
 popt, _ = curve_fit(gaussian, bin_centers, new_counts, p0=[1., 0., 1.])
 print(popt)
-x_interval_for_fit = np.linspace(new_bins[0]-2, new_bins[-1]+5, 10000)
-ax4.set_xlabel('Variability index',fontsize='16')
-#ax4.set_ylabel('Number of stars')
-#ax4.set_title('i=21-22',fontsize='10')
-ax4.plot(x_interval_for_fit, gaussian(x_interval_for_fit, *popt), color='r')
-ax4.minorticks_on()
-ax4.tick_params(axis='both',which='major', length=7,pad=10,direction='in',labelsize='16')
-ax4.tick_params(axis='y',which='both',left= True,direction='in')
-ax4.tick_params(axis='x',which='both',bottom= True,direction='in')
-ax4.tick_params(axis='x',which='both',top= True,direction='in')
-ax4.tick_params(axis='y',which='both',right= True,direction='in')
-ax4.text(6, 2.0, 'i=21-22',color='r',fontsize='16')
-ax4.text(6, 101.0, 'L=3.6',color='r',fontsize='16')
-ax4.text(5.8, 85.0, 'Totall=49,non=3',color='b',fontsize='16')
-ax4.axvline(x=3.6, color='r',linestyle='--',lw='0.5')
-ax4.axhline(y=3.5, color='r',linestyle='--',lw='0.5')
-ax4.axhline(y=49, color='r',linestyle='--',lw='0.5')
+
 
 #   plt.show()
 
